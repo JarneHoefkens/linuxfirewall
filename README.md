@@ -5,7 +5,7 @@ taak linux hardening
 
 #protect ping flooding.
 
-iptables -t filter -A INPUT -p icmp --icmp-type echo-request -m limit --limit 10/minutes -j ACCEPT
+iptables -t filter -A INPUT -p icmp --icmp-type echo-request -m limit --limit 5/minutes -j ACCEPT
 
 iptables -t filter -A INPUT -p icmp -j DROP
 
