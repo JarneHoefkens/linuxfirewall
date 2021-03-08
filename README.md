@@ -1,7 +1,19 @@
 # linuxfirewall
 taak linux hardening
 
-#zone transfer werkt niet via iptables --> kijk bijgevoegd doc.
+#zone transfer werkt niet via iptables 
+#Zonetransfer heeft te maken met de DNS server. In het bestand /etc/bind/named.conf.local kan je een aantal “aanpassingen” meegeven die invloed hebben op de werking van DNS.
+
+#/etc/bind/named.conf.local
+zone "firewall-zonetransfer" {
+        notify no;
+        allow-update {none;};
+        type master;
+        file "/etc/bind/firewall-zonetransfer";
+        allow-transfer {none;};
+};
+
+
 
 #protect ping flooding.
 
