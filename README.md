@@ -32,6 +32,7 @@ iptables -t filter -A INPUT -p icmp -j DROP
 iptables -t filter -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 
 
+
 #laat enkel security updates door.
 
 iptables -A OUTPUT -d security.debian.org --dport 80 -j ACCEPT
