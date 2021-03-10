@@ -34,8 +34,8 @@ iptables -t filter -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 
 
 #laat enkel security updates door.
-
-
+.
+.
 iptables -A OUTPUT -d security.debian.org --dport 80 -j ACCEPT
 
 sudo iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
